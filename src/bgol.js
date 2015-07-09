@@ -7,7 +7,8 @@
         container = createElement('container'),
         row = createElement('row'),
         style = document.createElement('style'),
-        button = document.createElement('button')
+        button = document.createElement('button'),
+        cookie = 'bgol_show='
     ;
 
     document.head.appendChild(style);
@@ -20,18 +21,23 @@
         'switch{position:fixed;z-index:10000;display:block;top:100vh;left:15px;margin-top:-45px;width:30px;height:30px;font-size:12px;transform:rotate(90deg);border:none;background:#333;color:#FFF;opacity:0.5}'
     ].join('.' + vendor)));
 
-    document.body.appendChild(wrapper);
     wrapper.appendChild(container);
     container.appendChild(row);
     createColumns(row, 12);
+
+    if (document.cookie.indexOf(cookie + true) !== -1) {
+        document.body.appendChild(wrapper);
+    }
 
     document.body.appendChild(button);
     button.className = vendor + 'switch glyphicon glyphicon-align-justify';
     button.onclick = function() {
         if (wrapper.parentElement === document.body) {
             document.body.removeChild(wrapper);
+            document.cookie = cookie + false;
         } else {
             document.body.appendChild(wrapper);
+            document.cookie = cookie + true;
         }
     };
 
