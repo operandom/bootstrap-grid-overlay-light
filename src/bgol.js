@@ -17,8 +17,9 @@
         'wrapper{position:fixed;z-index:10000;top:0;left:0;width:100%;height:100vh;pointer-events:none;}',
         'wrapper *{height:100%;}',
         'col-xs-1{outline:1px solid rgba(0,0,0,.05)}',
-        'col-inner{outline:1px solid rgba(0,0,0,.1);background:rgba(255,255,255,.1)}',
-        'switch{position:fixed;z-index:10000;display:block;top:100vh;left:15px;margin-top:-45px;width:30px;height:30px;font-size:12px;transform:rotate(90deg);border:none;background:#333;color:#FFF;opacity:0.5}'
+        'col-inner{outline:1px solid rgba(0,0,0,.15);background:rgba(255,255,255,.1)}',
+        'switch{position:fixed;z-index:10001;display:block;top:100vh;left:15px;margin-top:-45px;width:30px;height:30px;font-size:12px;transform:rotate(90deg);border: 1px solid rgba(255, 255, 255, 0.1);background:rgba(0,0,0,.5);color:#FFF;transition:all 200ms ease}',
+        'switch:hover{background:rgba(0,0,0,.8);}'
     ].join('.' + vendor)));
 
     wrapper.appendChild(container);
@@ -39,6 +40,7 @@
             document.body.appendChild(wrapper);
             document.cookie = cookie + true;
         }
+        button.blur();
     };
 
 
