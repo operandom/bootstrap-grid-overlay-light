@@ -8,7 +8,7 @@
         row = createElement('row'),
         style = document.createElement('style'),
         button = document.createElement('button'),
-        cookie = 'bgol_show='
+        key = vendor + 'show'
     ;
 
     document.head.appendChild(style);
@@ -26,21 +26,21 @@
     container.appendChild(row);
     createColumns(row, 12);
 
-    if (document.cookie.indexOf(cookie + true) !== -1) {
+    if (sessionStorage.getItem(key) === 'true') {
         document.body.appendChild(wrapper);
     }
 
     document.body.appendChild(button);
     button.className = vendor + 'switch glyphicon glyphicon-align-justify';
     button.onclick = function() {
+        button.blur();
         if (wrapper.parentElement === document.body) {
             document.body.removeChild(wrapper);
-            document.cookie = cookie + false;
+            sessionStorage.setItem(key, false);
         } else {
             document.body.appendChild(wrapper);
-            document.cookie = cookie + true;
+            sessionStorage.setItem(key, true);
         }
-        button.blur();
     };
 
 
