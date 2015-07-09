@@ -1,8 +1,12 @@
-(function() {
+(function(root) {
 
     'use strict';
 
-    var vendor = 'bgol-',
+    var document = root.document,
+        head = document.head,
+        body = document.body,
+        sessionStorage = root.sessionStorage,
+        vendor = 'bgol-',
         wrapper = createElement('wrapper', true),
         container = createElement('container'),
         row = createElement('row'),
@@ -11,7 +15,7 @@
         key = vendor + 'show'
     ;
 
-    document.head.appendChild(style);
+    head.appendChild(style);
     style.setAttribute('rel', 'stylesheet');
     style.appendChild(document.createTextNode('.' + vendor + [
         'wrapper{position:fixed;z-index:10000;top:0;left:0;width:100%;height:100vh;pointer-events:none;}',
@@ -27,18 +31,18 @@
     createColumns(row, 12);
 
     if (sessionStorage.getItem(key) === 'true') {
-        document.body.appendChild(wrapper);
+        body.appendChild(wrapper);
     }
 
-    document.body.appendChild(button);
+    body.appendChild(button);
     button.className = vendor + 'switch glyphicon glyphicon-align-justify';
     button.onclick = function() {
         button.blur();
-        if (wrapper.parentElement === document.body) {
-            document.body.removeChild(wrapper);
+        if (wrapper.parentElement === body) {
+            body.removeChild(wrapper);
             sessionStorage.setItem(key, false);
         } else {
-            document.body.appendChild(wrapper);
+            body.appendChild(wrapper);
             sessionStorage.setItem(key, true);
         }
     };
@@ -60,4 +64,4 @@
         }
     }
 
-})();
+})(this);
