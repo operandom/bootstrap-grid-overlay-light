@@ -16,6 +16,10 @@
                 margin-bottom: 30px;
             }
 
+            .part:last-child {
+                margin-bottom: 60px;
+            }
+
             .page-header h1 {
                 text-transform: uppercase;
             }
@@ -29,15 +33,19 @@
 
             img {
                 width: 100%;
-                border: 1px solid #eee;
+                border: 1px solid #BBB;
+                box-shadow: 0 5px 5px -4px rgba(0,0,0,0.5);
             }
 
             .message {
                 position: fixed;
-                left: 60px;
+                left: 45px;
+                background-color: rgba(255,255,255,0.8);
+                border: 1px solid rgba(0,0,0,.1);
                 top: 100vh;
                 margin-top: -45px;
-                line-height: 30px;
+                padding: 0 15px;
+                line-height: 28px;
                 text-transform: uppercase;
             }
 
@@ -58,21 +66,17 @@
                     <div class="page-header">
                         <h1><span class="glyphicon glyphicon-align-justify"></span>Bootstrap Grid Overlay Light</h1>
                     </div>
-                </div>
-            </div>
-            <div class="row part">
-                <div class="col-sm-6">
-                    <img src="assets/img/screenshot.jpg" alt="screenshot">
-                </div>
-                <div class="col-sm-6">
-                    <h2>Examples</h2>
-                    <ul>
-                        <li><a href="examples/example-01.html">Example 01</a></li>
-                    </ul>
+                    <p class="lead">A 1.3Ko javascript file for a bootstrap grid overlay.</p>
+                    <a class="btn btn-primary" href="https://github.com/operandom/bootstrap-grid-overlay-light/releases/download/bgol-0.1.1/bgol.min.js">Download V0.1.1</a>
                 </div>
             </div>
             <div class="row part">
                 <div class="col-sm-12">
+                    <img src="assets/img/screenshot.png" alt="screenshot">
+                </div>
+            </div>
+            <div class="row part">
+                <div class="col-sm-6">
                     <h2>Usage</h2>
 <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -88,10 +92,16 @@
 &lt;/html&gt;
 </code></pre>
                 </div>
+            <div class="col-sm-6">
+                <h2>Examples</h2>
+                <ul>
+                    <li><a href="examples/example-01.html">Example 01</a></li>
+                </ul>
+            </div>
             </div>
         </div>
         <div class="message text-primary">
-            &#x2770;  Click here to switch grid
+            <span class="glyphicon glyphicon-arrow-left"></span> Click here to switch grid
         </div>
         <script type="text/javascript" src="assets/scripts/bgol.min.js"></script>
     </body>
