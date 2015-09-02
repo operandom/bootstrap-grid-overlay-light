@@ -1,0 +1,32 @@
+{
+  "name": "bootstrap-grid-overlay-light",
+  "version": "0.1.1",
+  "description": "Bootstrap Grid Overlay Light\r ============================\r [Home Page](http://operandom.github.io/bootstrap-grid-overlay-light)",
+  "main": "src/bgol.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/operandom/bootstrap-grid-overlay-light.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "grid",
+    "overlay"
+  ],
+  "author": "Operandom <contact@operandom.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/operandom/bootstrap-grid-overlay-light/issues"
+  },
+  "homepage": "https://github.com/operandom/bootstrap-grid-overlay-light#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.0"
+  }
+}
